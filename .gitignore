@@ -1,0 +1,7 @@
+node_modules/
+.athena/
+*.local.json
+*.log
+.DS_Store
+/tmp/
+package-lock.json

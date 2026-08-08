@@ -1,0 +1,71 @@
+{
+  "name": "@mrsametyildirim/athena",
+  "version": "0.2.0",
+  "description": "Athena — a token-thrifty knowledge engine for AI coding agents. Reads every file type (docx/xlsx/pptx/pdf/media/images), finds files across your PC, drives open browser tabs, and grows a linked memory graph. Obsidian + NotebookLM + Playwright in one CLI, zero external tools.",
+  "type": "commonjs",
+  "bin": {
+    "athena": "bin/athena.js",
+    "bilge": "bin/athena.js"
+  },
+  "scripts": {
+    "test": "node test/smoke.js",
+    "postinstall": "node -e \"process.stdout.write('\n  Athena installed. Start with: athena help\n\n')\""
+  },
+  "keywords": [
+    "claude-code",
+    "claude",
+    "ai",
+    "memory",
+    "knowledge-graph",
+    "second-brain",
+    "obsidian",
+    "notebooklm",
+    "rag",
+    "playwright",
+    "browser-testing",
+    "token-efficient",
+    "security-audit",
+    "cli",
+    "markdown",
+    "zettelkasten",
+    "note-taking",
+    "developer-tools",
+    "pdf",
+    "docx",
+    "xlsx",
+    "transcription",
+    "whisper",
+    "ffmpeg",
+    "file-search",
+    "browser-automation",
+    "cdp"
+  ],
+  "author": "PARS / Bilge",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "playwright-core": "^1.40.0"
+  },
+  "peerDependenciesMeta": {
+    "playwright-core": {
+      "optional": true
+    }
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrsametyildirim/athena.git"
+  },
+  "optionalDependencies": {
+    "ffmpeg-static": "^5.2.0",
+    "@xenova/transformers": "^2.17.0"
+  },
+  "homepage": "https://github.com/mrsametyildirim/athena"
+}
