@@ -34,12 +34,15 @@ function ensureVault() {
   return dir;
 }
 
-/* ── Slug: safe filename from a title ─────────────────────────── */
+/* ── Slug: safe filename from a title ─────────────────────────
+   The map below folds Turkish letters to ASCII so that non-English
+   titles still produce clean, portable slugs (e.g. "Öğrenim" →
+   "ogrenim"). This is character folding, not localization. */
 function slugify(s) {
-  const tr = { 'ç':'c','ğ':'g','ı':'i','İ':'i','ö':'o','ş':'s','ü':'u',
-               'Ç':'c','Ğ':'g','Ö':'o','Ş':'s','Ü':'u' };
+  const fold = { 'ç':'c','ğ':'g','ı':'i','İ':'i','ö':'o','ş':'s','ü':'u',
+                 'Ç':'c','Ğ':'g','Ö':'o','Ş':'s','Ü':'u' };
   return String(s).trim()
-    .replace(/[çğıİöşüÇĞÖŞÜ]/g, m => tr[m] || m)
+    .replace(/[çğıİöşüÇĞÖŞÜ]/g, m => fold[m] || m)
     .toLowerCase()
     .replace(/[^a-z0-9\s-]/g, '')
     .replace(/\s+/g, '-')
